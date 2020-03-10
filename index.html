@@ -9,5 +9,16 @@ title: Paul Craig
     I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust
     me. <a href="/about">Read more about my life...</a>
   </p>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/"
+          })
+        }
+      })
+    }
+  </script>
 </div>
 <!-- /.blurb -->
